@@ -191,11 +191,11 @@ export function VideoCard({ video }: VideoCardProps) {
             )}
             {video.platform === 'facebook' && (
               <iframe
-                src={`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D${video.id}&show_text=0&width=560`}
+                src={video.embedUrl ? video.embedUrl : `https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D${video.id}&show_text=0&width=560`}
                 title={video.title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                className="w-full h-full border-none"
+                className="w-full h-full border-none bg-background"
               />
             )}
           </>
