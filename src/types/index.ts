@@ -4,7 +4,7 @@ export interface Video {
   description: string;
   category: string;
   platform: 'youtube' | 'instagram' | 'facebook';
-  thumbnailUrl: string;
+  thumbnailUrl: string | null;
   publishedAt?: string;
   publishedDate?: string;
   duration?: string | null;
@@ -14,6 +14,7 @@ export interface Video {
   featured?: boolean;
   tags?: string[];
   aspectRatio?: string;
+  likeCount?: number;
 }
 
 export interface FAQ {

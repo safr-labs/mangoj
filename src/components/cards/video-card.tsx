@@ -30,8 +30,24 @@ export function VideoCard({ video }: VideoCardProps) {
     return 'vlog';
   };
 
+  const getThumbnailUrl = (v: Video) => {
+    if (v.thumbnailUrl) return v.thumbnailUrl;
+    const cat = v.category.toLowerCase();
+    if (cat.includes('food')) {
+      return 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80';
+    }
+    if (cat.includes('estate') || cat.includes('property') || cat.includes('tour')) {
+      return 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80';
+    }
+    if (cat.includes('vlog')) {
+      return 'https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=800&q=80';
+    }
+    return 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80';
+  };
+
   const normalizedCat = normalizeCategory(video.category);
   const dateStr = video.publishedDate || video.publishedAt || '';
+  const currentThumbnail = getThumbnailUrl(video);
 
   const categoryLabels = {
     vlog: 'Family Vlog',
@@ -63,7 +79,7 @@ export function VideoCard({ video }: VideoCardProps) {
             video.platform === 'youtube' ? "aspect-16/9" : "aspect-[3/4]"
           }`}>
             <Image
-              src={video.thumbnailUrl}
+              src={currentThumbnail}
               alt={`Thumbnail of ${video.title}`}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -138,7 +154,7 @@ export function VideoCard({ video }: VideoCardProps) {
             )}
             {video.platform === 'instagram' && (
               <iframe
-                src={`https://www.instagram.com/p/${video.id}/embed`}
+                src={video.embedUrl ? video.embedUrl : `https://www.instagram.com/p/${video.id}/embed`}
                 title={video.title}
                 allowFullScreen
                 className="w-full h-full border-none bg-background"
