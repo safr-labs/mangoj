@@ -2,7 +2,8 @@
 
 import * as React from 'react';
 import Image from 'next/image';
-import { Play, Calendar, Eye } from 'lucide-react';
+import { Play, Calendar } from 'lucide-react';
+import { YoutubeIcon, InstagramIcon, FacebookIcon } from '@/components/shared/platform-icons';
 import { Video } from '@/types';
 import { formatDate } from '@/utils/format-date';
 import {
@@ -19,6 +20,18 @@ interface VideoCardProps {
 
 export function VideoCard({ video }: VideoCardProps) {
   const [isOpen, setIsOpen] = React.useState(false);
+
+  const normalizeCategory = (cat: string) => {
+    const c = cat.toLowerCase();
+    if (c.includes('vlog')) return 'vlog';
+    if (c.includes('food')) return 'food';
+    if (c.includes('lifestyle')) return 'lifestyle';
+    if (c.includes('estate') || c.includes('property') || c.includes('tour')) return 'real-estate';
+    return 'vlog';
+  };
+
+  const normalizedCat = normalizeCategory(video.category);
+  const dateStr = video.publishedDate || video.publishedAt || '';
 
   const categoryLabels = {
     vlog: 'Family Vlog',
@@ -46,7 +59,9 @@ export function VideoCard({ video }: VideoCardProps) {
       >
         <BaseCard padding="none" className="overflow-hidden flex flex-col h-full w-full">
           {/* Thumbnail Container (Facade Pattern) */}
-          <div className="relative aspect-16/9 w-full overflow-hidden bg-muted">
+          <div className={`relative w-full overflow-hidden bg-muted transition-all duration-300 ${
+            video.platform === 'youtube' ? "aspect-16/9" : "aspect-[3/4]"
+          }`}>
             <Image
               src={video.thumbnailUrl}
               alt={`Thumbnail of ${video.title}`}
@@ -61,20 +76,28 @@ export function VideoCard({ video }: VideoCardProps) {
               </div>
             </div>
             {/* Video Duration Badge */}
-            <span className="absolute bottom-3 right-3 bg-black/75 text-white text-xs font-semibold px-2 py-0.5 rounded-sm">
-              {video.duration}
-            </span>
+            {video.duration && (
+              <span className="absolute bottom-3 right-3 bg-black/75 text-white text-xs font-semibold px-2 py-0.5 rounded-sm">
+                {video.duration}
+              </span>
+            )}
           </div>
 
           {/* Details */}
           <div className="p-5 flex flex-col flex-grow">
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-center justify-between gap-2 mb-3 w-full">
               <span
                 className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border ${
-                  categoryColor[video.category]
+                  categoryColor[normalizedCat]
                 }`}
               >
-                {categoryLabels[video.category]}
+                {categoryLabels[normalizedCat]}
+              </span>
+              <span className="flex items-center gap-1.5 text-muted-foreground text-[11px] font-semibold tracking-wider uppercase">
+                {video.platform === 'youtube' && <YoutubeIcon className="h-3.5 w-3.5 text-red-500 shrink-0" />}
+                {video.platform === 'instagram' && <InstagramIcon className="h-3.5 w-3.5 text-pink-500 shrink-0" />}
+                {video.platform === 'facebook' && <FacebookIcon className="h-3.5 w-3.5 text-blue-600 shrink-0" />}
+                <span>{video.platform}</span>
               </span>
             </div>
             <h3 className="font-heading text-base md:text-lg font-semibold line-clamp-2 text-foreground group-hover:text-primary transition-colors leading-snug mb-3">
@@ -83,31 +106,54 @@ export function VideoCard({ video }: VideoCardProps) {
             <p className="text-xs md:text-sm text-muted-foreground line-clamp-2 mb-4 leading-relaxed">
               {video.description}
             </p>
-            <div className="mt-auto pt-3 border-t border-border/40 flex items-center justify-between text-xs text-muted-foreground">
-              <div className="flex items-center gap-1">
-                <Eye className="h-3.5 w-3.5 shrink-0" />
-                <span>{video.viewCount}</span>
-              </div>
+            <div className="mt-auto pt-3 border-t border-border/40 flex items-center justify-end text-xs text-muted-foreground">
               <div className="flex items-center gap-1">
                 <Calendar className="h-3.5 w-3.5 shrink-0" />
-                <span>{formatDate(video.publishedAt)}</span>
+                <span>{formatDate(dateStr)}</span>
               </div>
             </div>
           </div>
         </BaseCard>
       </DialogTrigger>
 
-      {/* Dynamic YouTube Video Embed Overlay (Loads iframe ONLY on trigger select) */}
-      <DialogContent className="max-w-4xl w-[95vw] p-0 bg-black overflow-hidden border-none aspect-16/9">
+      {/* Dynamic Video Embed Overlay (Loads iframe dynamically by platform) */}
+      <DialogContent 
+        className={
+          video.platform === 'youtube'
+            ? 'max-w-4xl w-[95vw] p-0 bg-black overflow-hidden border-none aspect-16/9'
+            : 'max-w-[400px] w-[95vw] h-[80vh] p-0 bg-background overflow-hidden border-none rounded-2xl flex flex-col items-center justify-center shadow-2xl'
+        }
+      >
         <DialogTitle className="sr-only">{video.title}</DialogTitle>
         {isOpen && (
-          <iframe
-            src={`https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`}
-            title={video.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            className="w-full h-full border-none"
-          />
+          <>
+            {video.platform === 'youtube' && (
+              <iframe
+                src={video.embedUrl ? `${video.embedUrl}?autoplay=1&rel=0` : `https://www.youtube.com/embed/${video.id}?autoplay=1&rel=0`}
+                title={video.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-none"
+              />
+            )}
+            {video.platform === 'instagram' && (
+              <iframe
+                src={`https://www.instagram.com/p/${video.id}/embed`}
+                title={video.title}
+                allowFullScreen
+                className="w-full h-full border-none bg-background"
+              />
+            )}
+            {video.platform === 'facebook' && (
+              <iframe
+                src={`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D${video.id}&show_text=0&width=560`}
+                title={video.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-none"
+              />
+            )}
+          </>
         )}
       </DialogContent>
     </Dialog>

@@ -22,6 +22,8 @@ export default async function VideosPage({ searchParams }: PageProps) {
   const resolvedParams = await searchParams;
   const initialCategory =
     typeof resolvedParams.category === 'string' ? resolvedParams.category : 'all';
+  const initialPlatform =
+    typeof resolvedParams.platform === 'string' ? resolvedParams.platform : 'all';
 
   return (
     <>
@@ -74,7 +76,7 @@ export default async function VideosPage({ searchParams }: PageProps) {
               </div>
             }
           >
-            <VideosGridClient initialCategory={initialCategory} />
+            <VideosGridClient initialCategory={initialCategory} initialPlatform={initialPlatform} />
           </React.Suspense>
         </Container>
       </Section>

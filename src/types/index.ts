@@ -1,12 +1,19 @@
 export interface Video {
-  id: string; // YouTube Video ID
+  id: string; // Video ID or Shortcode
   title: string;
   description: string;
-  category: 'vlog' | 'food' | 'lifestyle' | 'real-estate';
+  category: string;
+  platform: 'youtube' | 'instagram' | 'facebook';
   thumbnailUrl: string;
-  publishedAt: string;
-  duration: string;
-  viewCount: string;
+  publishedAt?: string;
+  publishedDate?: string;
+  duration?: string | null;
+  viewCount?: string | number;
+  videoUrl?: string;
+  embedUrl?: string;
+  featured?: boolean;
+  tags?: string[];
+  aspectRatio?: string;
 }
 
 export interface FAQ {
