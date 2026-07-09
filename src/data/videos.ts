@@ -14,6 +14,7 @@ export const youtubeVideos: Video[] = [
     publishedDate: "2022-08-11",
     duration: null,
     viewCount: 489723,
+    likeCount: 22400,
     featured: true,
     tags: ["dubaifish", "market tour", "tamil vlog"]
   },
@@ -30,6 +31,7 @@ export const youtubeVideos: Video[] = [
     publishedDate: "2022-08-17",
     duration: null,
     viewCount: 142356,
+    likeCount: 9600,
     featured: true,
     tags: ["dubaifish", "foodie", "bahubali thali"]
   },
@@ -46,6 +48,7 @@ export const youtubeVideos: Video[] = [
     publishedDate: "2022-09-25",
     duration: null,
     viewCount: 37115,
+    likeCount: 1800,
     featured: false,
     tags: ["money pechu", "investment", "interview"]
   },
@@ -62,6 +65,7 @@ export const youtubeVideos: Video[] = [
     publishedDate: "2025-07-09",
     duration: null,
     viewCount: 32000,
+    likeCount: 1500,
     featured: true,
     tags: ["dubai real estate", "property investment", "tamil"]
   },
@@ -78,6 +82,7 @@ export const youtubeVideos: Video[] = [
     publishedDate: "2025-08-09",
     duration: null,
     viewCount: 30000,
+    likeCount: 1400,
     featured: false,
     tags: ["gold souq", "factory tour", "sharjah to dubai"]
   },
@@ -94,6 +99,7 @@ export const youtubeVideos: Video[] = [
     publishedDate: "2023-07-09",
     duration: null,
     viewCount: 27000,
+    likeCount: 1200,
     featured: false,
     tags: ["home cooking", "seafood tamil", "fish curry"]
   },
@@ -110,6 +116,7 @@ export const youtubeVideos: Video[] = [
     publishedDate: "2026-05-09",
     duration: null,
     viewCount: 600,
+    likeCount: 42,
     featured: false,
     tags: ["family reunion", "home vlog"]
   },
@@ -126,6 +133,7 @@ export const youtubeVideos: Video[] = [
     publishedDate: "2026-01-07",
     duration: null,
     viewCount: 324,
+    likeCount: 21,
     featured: false,
     tags: ["ayurveda clinic", "sponsored", "wellness"]
   }
@@ -280,7 +288,8 @@ export const facebookVideos: Video[] = [
     thumbnailUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=800&q=80',
     publishedAt: '2026-06-05',
     duration: '10:15',
-    viewCount: '18K views',
+    viewCount: 18000,
+    likeCount: 420,
   },
   {
     id: '1023948572938473',
@@ -291,7 +300,8 @@ export const facebookVideos: Video[] = [
     thumbnailUrl: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80',
     publishedAt: '2026-05-05',
     duration: '12:40',
-    viewCount: '24K views',
+    viewCount: 24000,
+    likeCount: 560,
   },
 ];
 

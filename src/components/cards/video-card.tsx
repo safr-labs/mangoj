@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import Image from 'next/image';
-import { Play, Calendar } from 'lucide-react';
+import { Play, Calendar, Eye, Heart } from 'lucide-react';
 import { YoutubeIcon, InstagramIcon, FacebookIcon } from '@/components/shared/platform-icons';
 import { Video } from '@/types';
 import { formatDate } from '@/utils/format-date';
@@ -13,6 +13,21 @@ import {
   DialogTitle,
 } from '@/components/ui/dialog';
 import { BaseCard } from './base-card';
+
+function formatNumber(num: string | number | undefined): string {
+  if (num === undefined || num === null) return '';
+  if (typeof num === 'string') {
+    const cleaned = num.replace(/views|likes/gi, '').trim();
+    return cleaned;
+  }
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+  }
+  if (num >= 1000) {
+    return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+  }
+  return num.toString();
+}
 
 interface VideoCardProps {
   video: Video;
@@ -122,10 +137,24 @@ export function VideoCard({ video }: VideoCardProps) {
             <p className="text-xs md:text-sm text-muted-foreground line-clamp-2 mb-4 leading-relaxed">
               {video.description}
             </p>
-            <div className="mt-auto pt-3 border-t border-border/40 flex items-center justify-end text-xs text-muted-foreground">
+            <div className="mt-auto pt-3 border-t border-border/40 flex items-center justify-between text-[11px] md:text-xs text-muted-foreground">
+              <div className="flex items-center gap-3">
+                {video.viewCount !== undefined && (
+                  <div className="flex items-center gap-1" title={`${video.viewCount} views`}>
+                    <Eye className="h-3.5 w-3.5 shrink-0 text-muted-foreground/70" />
+                    <span className="font-medium">{formatNumber(video.viewCount)} views</span>
+                  </div>
+                )}
+                {video.likeCount !== undefined && (
+                  <div className="flex items-center gap-1" title={`${video.likeCount} likes`}>
+                    <Heart className="h-3.5 w-3.5 shrink-0 text-rose-500 fill-rose-500/10" />
+                    <span className="font-medium">{formatNumber(video.likeCount)} likes</span>
+                  </div>
+                )}
+              </div>
               <div className="flex items-center gap-1">
-                <Calendar className="h-3.5 w-3.5 shrink-0" />
-                <span>{formatDate(dateStr)}</span>
+                <Calendar className="h-3.5 w-3.5 shrink-0 text-muted-foreground/70" />
+                <span className="font-medium">{formatDate(dateStr)}</span>
               </div>
             </div>
           </div>
