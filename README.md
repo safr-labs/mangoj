@@ -71,3 +71,4 @@ To upgrade this Starter Package to a **Business/Premium Package** (adding Postgr
 1. **Do not modify the UI components**. All markup is fully decoupled.
 2. Replace local data files in `/src/data/` with fetch queries calling the CMS APIs or PostgreSQL tables in Next.js Server Components.
 3. Hook up the form submit actions in `/src/actions/contact.ts` to insert entries into the database using Prisma.
+
