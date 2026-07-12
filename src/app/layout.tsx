@@ -43,6 +43,11 @@ export const metadata: Metadata = {
       'Official portfolio of Mango J (Manganikka), Dubai-based Tamil YouTube creator. Explore food reviews, travel vlogs, and property tours.',
     creator: '@manganikka',
   },
+  icons: {
+    icon: '/mangoj.webp',
+    shortcut: '/mangoj.webp',
+    apple: '/mangoj.webp',
+  },
 };
 
 export default function RootLayout({

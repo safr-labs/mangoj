@@ -31,7 +31,7 @@ export function Navbar() {
         >
           <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-border bg-muted shrink-0">
             <Image
-              src="/logo.webp"
+              src="/mangoj.webp"
               alt="Mango J Logo"
               fill
               unoptimized

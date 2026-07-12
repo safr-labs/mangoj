@@ -20,7 +20,7 @@ export function Footer() {
             >
               <div className="relative w-9 h-9 rounded-lg overflow-hidden border border-border bg-muted shrink-0">
                 <Image
-                  src="/logo.webp"
+                  src="/mangoj.webp"
                   alt="Mango J Logo"
                   fill
                   unoptimized
