@@ -65,7 +65,7 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 to-transparent rounded-3xl -rotate-2 scale-102" />
               <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-xl border border-border/60">
                 <Image
-                  src="/hero-portrait.jpg"
+                  src="/hero-portrait.webp"
                   alt="Mango J Creator Portrait"
                   fill
                   priority
@@ -76,7 +76,7 @@ export function Hero() {
                 <div className="absolute bottom-5 left-5 right-5 bg-background/80 backdrop-blur-md p-4 rounded-2xl border border-border/40 flex items-center gap-3">
                   <div className="relative w-10 h-10 rounded-full overflow-hidden border border-primary/50 bg-muted shrink-0">
                     <Image
-                      src="/mangoj.jpg"
+                      src="/mangoj.webp"
                       alt="Mango J Profile"
                       fill
                       sizes="40px"

@@ -109,27 +109,27 @@ export const aboutContent = {
     description: 'A glimpse into our vlogging shoots, food tastings, real estate walkthroughs, and family life in Dubai.',
     images: [
       {
-        src: '/gallery-1.png',
+        src: '/gallery-1.webp',
         alt: 'Shooting a vlog at Dubai Downtown with Burj Khalifa',
       },
       {
-        src: '/gallery-2.png',
+        src: '/gallery-2.webp',
         alt: 'Filming a Tamil lifestyle cooking vlog',
       },
       {
-        src: '/gallery-3.png',
+        src: '/gallery-3.webp',
         alt: 'Restaurant food tasting review shoot',
       },
       {
-        src: '/gallery-4.png',
+        src: '/gallery-4.webp',
         alt: 'Luxury villa property walkthrough filming in Dubai Marina',
       },
       {
-        src: '/gallery-5.png',
+        src: '/gallery-5.webp',
         alt: 'Family gold store jewelry promotion shoot',
       },
       {
-        src: '/gallery-6.png',
+        src: '/gallery-6.webp',
         alt: 'Behind the scenes video editing in our Marina studio',
       },
     ],

@@ -18,7 +18,7 @@ export function AboutPreview() {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl rotate-2 scale-102" />
           <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-lg border border-border/40">
             <Image
-              src="/mangoj.jpg"
+              src="/mangoj.webp"
               alt="Mango J Portrait"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
