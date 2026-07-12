@@ -11,8 +11,8 @@ export const contactContent = {
   info: {
     heading: 'Contact Information',
     description: 'Based in the heart of Dubai, UAE. We work with clients locally and globally.',
-    email: 'collab@manganikka.com',
-    location: 'Dubai Marina, Dubai, United Arab Emirates',
+    email: 'mangoj.business@gmail.com',
+    location: 'Dubai, UAE',
     officeHours: 'Monday – Friday: 9:00 AM – 6:00 PM GST',
   },
   form: {

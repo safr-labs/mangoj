@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { navigationItems } from '@/data/navigation';
 import { SocialLinks } from '@/components/shared/social-links';
 import { Container } from '@/components/layout/container';
@@ -15,8 +16,17 @@ export function Footer() {
           <div className="md:col-span-2">
             <Link
               href="/"
-              className="font-heading text-2xl font-bold tracking-tight text-foreground flex items-center gap-1.5 mb-4"
+              className="font-heading text-2xl font-bold tracking-tight text-foreground flex items-center gap-2 mb-4"
             >
+              <div className="relative w-9 h-9 rounded-lg overflow-hidden border border-border bg-muted shrink-0">
+                <Image
+                  src="/logo.jpg"
+                  alt="Mango J Logo"
+                  fill
+                  sizes="36px"
+                  className="object-cover"
+                />
+              </div>
               <span>Mango</span>
               <span className="text-primary font-extrabold">J</span>
             </Link>
@@ -54,12 +64,12 @@ export function Footer() {
               For business and branding inquiries in Dubai and globally:
             </p>
             <a
-              href="mailto:collab@manganikka.com"
+              href="mailto:mangoj.business@gmail.com"
               className="text-sm font-bold text-primary hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-md block mb-1"
             >
-              collab@manganikka.com
+              mangoj.business@gmail.com
             </a>
-            <span className="text-xs text-muted-foreground">Dubai Marina, Dubai, UAE</span>
+            <span className="text-xs text-muted-foreground">Dubai, UAE</span>
           </div>
         </div>
 
@@ -68,21 +78,17 @@ export function Footer() {
           <p>
             &copy; {currentYear} Manganikka. All rights reserved.
           </p>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+          <div className="text-xs md:text-sm">
             <span>
-              Studio:{' '}
+              Developed by{' '}
               <a
                 href="https://safrlabs.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-foreground font-medium"
+                className="font-semibold text-foreground hover:text-primary transition"
               >
                 Safr Labs
               </a>
-            </span>
-            <span>
-              Developer:{' '}
-              <span className="font-medium text-foreground">Abdul Ajees M</span>
             </span>
           </div>
         </div>

@@ -29,7 +29,7 @@ export interface Navigation {
 }
 
 export interface SocialLink {
-  platform: 'youtube' | 'instagram' | 'email' | 'linkedin';
+  platform: 'youtube' | 'instagram' | 'email' | 'linkedin' | 'facebook';
   href: string;
   label: string;
 }

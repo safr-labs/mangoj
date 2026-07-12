@@ -82,23 +82,23 @@ export const aboutContent = {
     list: [
       {
         name: 'YouTube',
-        handle: '@manganikka',
+        handle: '@mangoj13',
         followers: '104,000+ Subscribers (1.1K+ Videos)',
-        link: 'https://youtube.com/@manganikka',
+        link: 'https://youtube.com/@mangoj13?si=iUItRI8SwwfYDdZp',
         cta: 'Subscribe Channel',
       },
       {
         name: 'Instagram',
         handle: '@manganikka',
         followers: '42,000+ Followers (889 Posts)',
-        link: 'https://instagram.com/manganikka',
+        link: 'https://www.instagram.com/manganikka?igsh=MWR0a282eHZvbDd4dA==',
         cta: 'Follow Instagram',
       },
       {
         name: 'Facebook',
-        handle: 'manganikka',
+        handle: 'Mango J',
         followers: '79,000+ Followers (995 Posts)',
-        link: 'https://facebook.com',
+        link: 'https://www.facebook.com/share/1Cr85MyPDw/',
         cta: 'Like Facebook Page',
       },
     ],
@@ -109,27 +109,27 @@ export const aboutContent = {
     description: 'A glimpse into our vlogging shoots, food tastings, real estate walkthroughs, and family life in Dubai.',
     images: [
       {
-        src: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80',
+        src: '/gallery-1.png',
         alt: 'Shooting a vlog at Dubai Downtown with Burj Khalifa',
       },
       {
-        src: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=600&q=80',
+        src: '/gallery-2.png',
         alt: 'Filming a Tamil lifestyle cooking vlog',
       },
       {
-        src: 'https://images.unsplash.com/photo-1582672060674-bc7bd10f13d1?auto=format&fit=crop&w=600&q=80',
+        src: '/gallery-3.png',
         alt: 'Restaurant food tasting review shoot',
       },
       {
-        src: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
+        src: '/gallery-4.png',
         alt: 'Luxury villa property walkthrough filming in Dubai Marina',
       },
       {
-        src: 'https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?auto=format&fit=crop&w=600&q=80',
+        src: '/gallery-5.png',
         alt: 'Family gold store jewelry promotion shoot',
       },
       {
-        src: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80',
+        src: '/gallery-6.png',
         alt: 'Behind the scenes video editing in our Marina studio',
       },
     ],

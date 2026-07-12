@@ -66,12 +66,12 @@ export default function AboutPage() {
       <Section className="border-b border-border/30">
         <Container className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Image with decoration */}
-          <div className="lg:col-span-5 relative w-full aspect-4/3 sm:aspect-video lg:aspect-square">
+          <div className="lg:col-span-5 relative w-full aspect-square">
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl rotate-3 scale-102" />
             <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-lg border border-border/40">
               <Image
-                src="https://images.unsplash.com/photo-1547234935-80c7145ec969?auto=format&fit=crop&w=800&q=80"
-                alt="Dubai Desert Safari experience representing story origins"
+                src="/mangoj.jpg"
+                alt="Mango J Portrait"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"

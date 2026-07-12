@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { clsx } from 'clsx';
 import { navigationItems } from '@/data/navigation';
@@ -26,8 +27,17 @@ export function Navbar() {
       <Container className="h-16 md:h-20 flex items-center justify-between">
         <Link
           href="/"
-          className="font-heading text-xl md:text-2xl font-bold tracking-tight text-foreground flex items-center gap-1.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-md"
+          className="font-heading text-xl md:text-2xl font-bold tracking-tight text-foreground flex items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary rounded-md"
         >
+          <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-border bg-muted shrink-0">
+            <Image
+              src="/logo.jpg"
+              alt="Mango J Logo"
+              fill
+              sizes="32px"
+              className="object-cover"
+            />
+          </div>
           <span>Mango</span>
           <span className="text-primary font-extrabold">J</span>
         </Link>

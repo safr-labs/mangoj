@@ -27,13 +27,6 @@ export function Cta() {
             <Mail className="h-4 w-4 shrink-0" />
             <span>{cta.primaryCta.text}</span>
           </Link>
-          <a
-            href={cta.secondaryCta.href}
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 font-semibold text-foreground shadow-xs transition hover:bg-muted/40 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-          >
-            <FileText className="h-4 w-4 shrink-0" />
-            <span>{cta.secondaryCta.text}</span>
-          </a>
         </div>
       </Container>
     </Section>

@@ -11,7 +11,7 @@ export const servicesData: Service[] = [
       'Pinned comment with brand discount/call-to-action',
       'Instagram Story promotional share',
     ],
-    priceRange: '₹35,000 - ₹50,000',
+    priceRange: 'Custom Quote',
     iconName: 'video',
   },
   {
@@ -24,7 +24,7 @@ export const servicesData: Service[] = [
       'Honest tasting review by Mango J & family',
       'Google Maps listing link and location guide inclusion',
     ],
-    priceRange: '₹25,000 - ₹35,000',
+    priceRange: 'Custom Quote',
     iconName: 'utensils',
   },
   {

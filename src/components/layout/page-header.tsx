@@ -35,7 +35,7 @@ export function PageHeader({
           )}
         >
           {label && (
-            <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-3">
+            <span className="inline-block text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-3">
               {label}
             </span>
           )}

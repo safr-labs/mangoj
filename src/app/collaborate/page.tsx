@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 };
 
 export default function CollaboratePage() {
-  const { hero, whyPartner, whoWeWorkWith, process, faq, cta } = collaborateContent;
+  const { hero, whyPartner, whoWeWorkWith, process, faq, cta, demographics } = collaborateContent;
 
   // Icon mapping for services
   const serviceIconMap: Record<string, React.ComponentType<any>> = {
@@ -58,7 +58,7 @@ export default function CollaboratePage() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(245,166,35,0.08),transparent)]" />
         <Container className="max-w-4xl text-center flex flex-col items-center relative z-10">
           <Reveal delay={0.1}>
-            <span className="text-xs md:text-sm font-bold tracking-widest text-primary uppercase mb-4 bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+            <span className="inline-block text-xs md:text-sm font-bold tracking-widest text-primary uppercase mb-4 bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
               {hero.label}
             </span>
           </Reveal>
@@ -127,6 +127,63 @@ export default function CollaboratePage() {
           </div>
         </Container>
       </Section>
+
+      {/* Viewer Demographics Section */}
+      {demographics && (
+        <Section className="bg-muted/10 border-b border-border/30">
+          <Container>
+            <SectionHeader
+              label={demographics.label}
+              heading={demographics.heading}
+              description={demographics.description}
+            />
+
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 max-w-5xl mx-auto w-full items-stretch">
+              {/* Left Column: Top Locations */}
+              <div className="md:col-span-6 bg-card border border-border/60 rounded-3xl p-6 md:p-8 flex flex-col justify-between shadow-xs">
+                <h3 className="font-heading text-lg font-bold text-foreground mb-6">
+                  Top Viewer Locations
+                </h3>
+                <div className="space-y-5">
+                  {demographics.locations.map((loc, idx) => (
+                    <div key={idx} className="space-y-2">
+                      <div className="flex justify-between text-sm">
+                        <span className="font-semibold text-foreground">{loc.country}</span>
+                        <span className="text-primary font-bold">{loc.percentage}</span>
+                      </div>
+                      <div className="w-full bg-muted rounded-full h-3 overflow-hidden">
+                        <div
+                          className="bg-primary h-full rounded-full transition-all duration-500"
+                          style={{ width: loc.percentage }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Column: Splits & Language */}
+              <div className="md:col-span-6 bg-card border border-border/60 rounded-3xl p-6 md:p-8 flex flex-col justify-between shadow-xs">
+                <h3 className="font-heading text-lg font-bold text-foreground mb-6">
+                  Viewer Splits & Engagement
+                </h3>
+                <div className="divide-y divide-border/40">
+                  {demographics.splits.map((split, idx) => (
+                    <div key={idx} className="py-4 first:pt-0 last:pb-0 flex items-center justify-between gap-4">
+                      <span className="text-sm font-medium text-muted-foreground">
+                        {split.label}
+                      </span>
+                      <span className="text-sm font-bold text-foreground text-right">
+                        {split.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Container>
+        </Section>
+      )}
 
       {/* 3. Who I Work With (5 Columns desktop, 3 tablet, 2 mobile) */}
       <Section className="bg-muted/10 border-b border-border/30">
@@ -284,15 +341,6 @@ export default function CollaboratePage() {
             >
               <Mail className="h-5 w-5 text-primary shrink-0" />
               <span>Email Booking Desk</span>
-            </a>
-            <a
-              href="https://wa.me/971501234567" // Placeholder actual WhatsApp
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-primary-foreground/35 bg-primary px-6 font-semibold text-primary-foreground shadow-xs transition hover:scale-[1.02] hover:bg-primary-foreground/10 active:scale-[0.98]"
-            >
-              <MessageSquare className="h-5 w-5 shrink-0" />
-              <span>WhatsApp Chat</span>
             </a>
           </div>
         </Container>

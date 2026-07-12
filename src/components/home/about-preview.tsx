@@ -14,12 +14,12 @@ export function AboutPreview() {
     <Section background="muted">
       <Container className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Visual Showcase */}
-        <div className="lg:col-span-5 relative aspect-4/3 lg:aspect-square order-last lg:order-first">
+        <div className="lg:col-span-5 relative aspect-square order-last lg:order-first">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl rotate-2 scale-102" />
           <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-lg border border-border/40">
             <Image
-              src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80"
-              alt="Mango J reviewing food at a restaurant representing her food vlogs"
+              src="/mangoj.jpg"
+              alt="Mango J Portrait"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
               className="object-cover"
@@ -29,7 +29,7 @@ export function AboutPreview() {
 
         {/* Text Area */}
         <div className="lg:col-span-7 flex flex-col items-start">
-          <span className="text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-3">
+          <span className="inline-block text-xs md:text-sm font-semibold tracking-widest text-primary uppercase mb-3">
             {hero.label}
           </span>
           <Heading as="h2" variant="h2" className="mb-6">

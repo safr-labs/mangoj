@@ -15,7 +15,7 @@ export function Hero() {
         {/* Text Area */}
         <div className="lg:col-span-7 flex flex-col items-start">
           <Reveal delay={0.1}>
-            <span className="text-xs md:text-sm font-bold tracking-widest text-primary uppercase mb-4 bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
+            <span className="inline-block text-xs md:text-sm font-bold tracking-widest text-primary uppercase mb-4 bg-primary/10 px-3 py-1 rounded-full border border-primary/20">
               {hero.label}
             </span>
           </Reveal>
@@ -36,35 +36,37 @@ export function Hero() {
             </p>
           </Reveal>
 
-          <Reveal delay={0.4}>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href={hero.primaryCta.href}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-6 font-semibold text-primary-foreground shadow-md transition hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-              >
-                <Play className="h-4 w-4 fill-current shrink-0" />
-                <span>{hero.primaryCta.text}</span>
-              </Link>
-              <Link
-                href={hero.secondaryCta.href}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 font-semibold text-foreground shadow-xs transition hover:scale-[1.02] hover:bg-muted/40 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-              >
-                <span>{hero.secondaryCta.text}</span>
-                <ArrowRight className="h-4 w-4 shrink-0" />
-              </Link>
-            </div>
-          </Reveal>
+          <div className="w-full flex justify-center sm:justify-start">
+            <Reveal delay={0.4}>
+              <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center items-center sm:justify-start">
+                <Link
+                  href={hero.primaryCta.href}
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-primary px-6 font-semibold text-primary-foreground shadow-md transition hover:scale-[1.02] active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary w-full sm:w-auto"
+                >
+                  <Play className="h-4 w-4 fill-current shrink-0" />
+                  <span>{hero.primaryCta.text}</span>
+                </Link>
+                <Link
+                  href={hero.secondaryCta.href}
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-border bg-card px-6 font-semibold text-foreground shadow-xs transition hover:scale-[1.02] hover:bg-muted/40 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary w-full sm:w-auto"
+                >
+                  <span>{hero.secondaryCta.text}</span>
+                  <ArrowRight className="h-4 w-4 shrink-0" />
+                </Link>
+              </div>
+            </Reveal>
+          </div>
         </div>
 
         {/* Visual Showcase */}
-        <div className="lg:col-span-5 relative w-full aspect-4/3 lg:aspect-square">
+        <div className="lg:col-span-5 relative w-full aspect-square">
           <Reveal delay={0.3} yOffset={20}>
-            <div className="relative w-full h-full aspect-4/3 lg:aspect-square">
+            <div className="relative w-full h-full aspect-square">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 to-transparent rounded-3xl -rotate-2 scale-102" />
               <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-xl border border-border/60">
                 <Image
-                  src="https://images.unsplash.com/photo-1582672060674-bc7bd10f13d1?auto=format&fit=crop&w=800&q=80"
-                  alt="Dubai skyline and Burj Khalifa view representing Mango J vlogs"
+                  src="/hero-portrait.jpg"
+                  alt="Mango J Creator Portrait"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -72,8 +74,14 @@ export function Hero() {
                 />
                 {/* Embedded creator indicator */}
                 <div className="absolute bottom-5 left-5 right-5 bg-background/80 backdrop-blur-md p-4 rounded-2xl border border-border/40 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-heading font-bold">
-                    MJ
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden border border-primary/50 bg-muted shrink-0">
+                    <Image
+                      src="/mangoj.jpg"
+                      alt="Mango J Profile"
+                      fill
+                      sizes="40px"
+                      className="object-cover"
+                    />
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground uppercase tracking-widest font-bold">Featured Creator</p>

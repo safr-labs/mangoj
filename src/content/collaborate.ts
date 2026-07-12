@@ -2,13 +2,13 @@ export const collaborateContent = {
   hero: {
     label: 'PARTNER WITH MANGANIKKA',
     title: 'Promote Your Brand to a Highly Engaged Tamil Audience',
-    description: 'We create high-performance sponsored integrations, authentic food reviews, and cinematic real estate walkthroughs that drive real business results in Dubai and globally.',
+    description: 'We create high-performance sponsored integrations, authentic food reviews, and cinematic real estate walkthroughs that drive real business results in Dubai and globally. Custom campaigns start from ₹10,000 / 500 AED.',
     primaryCta: {
-      text: 'Request Collaboration Kit',
+      text: 'Request Custom Quote',
       href: '/contact',
     },
     secondaryCta: {
-      text: 'View Pricing & Packages',
+      text: 'View Services & Quote Info',
       href: '#packages',
     },
   },
@@ -143,7 +143,21 @@ export const collaborateContent = {
   cta: {
     heading: 'Let’s Start Your Campaign Today',
     description: 'Connect with our team to request a customized rate card, book a shooting date, or schedule a brand consultation.',
-    email: 'collab@manganikka.com',
-    phone: '+971 50 123 4567', // Dubai Marina phone
+    email: 'mangoj.business@gmail.com',
+  },
+  demographics: {
+    label: 'AUDIENCE DEMOGRAPHICS',
+    heading: 'Who Watches Mango J?',
+    description: 'Our content reaches a highly targeted, family-oriented South Asian audience based locally in the UAE and back in India.',
+    locations: [
+      { country: 'United Arab Emirates', percentage: '40%' },
+      { country: 'India', percentage: '30%' },
+      { country: 'Saudi Arabia', percentage: '10%' },
+    ],
+    splits: [
+      { label: 'Gender Split', value: '55% Female / 45% Male' },
+      { label: 'Primary Age Group', value: '25-34 age group' },
+      { label: 'Content Language', value: 'Tamil (with English Subtitles)' },
+    ],
   },
 };
