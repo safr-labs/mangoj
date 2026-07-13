@@ -66,15 +66,16 @@ export default function AboutPage() {
       <Section className="border-b border-border/30">
         <Container className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: Image with decoration */}
-          <div className="lg:col-span-5 relative w-full aspect-square">
+          <div className="lg:col-span-5 relative w-full aspect-[4/5]">
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent rounded-3xl rotate-3 scale-102" />
             <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-lg border border-border/40">
               <Image
-                src="/mangoj.webp"
+                src="/mangoj2.webp"
                 alt="Mango J Portrait"
-                fill
+                width={2611}
+                height={3264}
                 sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover"
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
@@ -277,13 +278,17 @@ export default function AboutPage() {
                 <Image
                   src={img.src}
                   alt={img.alt}
-                  fill
+                  width={(img as any).width || 3264}
+                  height={(img as any).height || 2448}
                   loading="lazy"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <p className="text-xs font-semibold text-white leading-normal">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-left">
+                  <p className="text-sm font-medium italic text-amber-300 mb-2 leading-relaxed">
+                    {(img as any).quote || img.alt}
+                  </p>
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-white/60">
                     {img.alt}
                   </p>
                 </div>

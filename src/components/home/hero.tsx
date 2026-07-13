@@ -59,18 +59,19 @@ export function Hero() {
         </div>
 
         {/* Visual Showcase */}
-        <div className="lg:col-span-5 relative w-full aspect-square">
+        <div className="lg:col-span-5 relative w-full aspect-[4/5]">
           <Reveal delay={0.3} yOffset={20}>
-            <div className="relative w-full h-full aspect-square">
+            <div className="relative w-full h-full aspect-[4/5]">
               <div className="absolute inset-0 bg-gradient-to-tr from-primary/15 to-transparent rounded-3xl -rotate-2 scale-102" />
               <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-xl border border-border/60">
                 <Image
-                  src="/hero-portrait.webp"
+                  src="/mangoj4.webp"
                   alt="Mango J Creator Portrait"
-                  fill
+                  width={1122}
+                  height={1402}
                   priority
                   sizes="(max-width: 1024px) 100vw, 40vw"
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
                 {/* Embedded creator indicator */}
                 <div className="absolute bottom-5 left-5 right-5 bg-background/80 backdrop-blur-md p-4 rounded-2xl border border-border/40 flex items-center gap-3">

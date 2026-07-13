@@ -8,6 +8,7 @@ import { z } from 'zod';
 import { Loader2, CheckCircle, AlertCircle } from 'lucide-react';
 import { contactContent } from '@/content/contact';
 import { FormField } from '@/components/forms/form-field';
+import { submitContactEnquiry } from '@/actions/contact';
 
 // Define strict validation schema with Zod
 const contactSchema = z.object({
@@ -53,11 +54,21 @@ export function ContactForm() {
 
   const onSubmit = async (data: ContactFormData) => {
     try {
-      // Simulate real server action/submission delay
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log('Form submission payload:', data);
-      setSubmitStatus('success');
-      reset();
+      setSubmitStatus('idle');
+      
+      const formData = new FormData();
+      Object.entries(data).forEach(([key, val]) => {
+        formData.append(key, val);
+      });
+
+      const res = await submitContactEnquiry(null, formData);
+      if (res.success) {
+        setSubmitStatus('success');
+        reset();
+      } else {
+        console.error('Server action returned error:', res.message);
+        setSubmitStatus('error');
+      }
     } catch (err) {
       console.error('Submission error:', err);
       setSubmitStatus('error');

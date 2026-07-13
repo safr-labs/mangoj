@@ -14,15 +14,16 @@ export function AboutPreview() {
     <Section background="muted">
       <Container className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         {/* Visual Showcase */}
-        <div className="lg:col-span-5 relative aspect-square order-last lg:order-first">
+        <div className="lg:col-span-5 relative aspect-[4/5] order-last lg:order-first">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl rotate-2 scale-102" />
           <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-lg border border-border/40">
             <Image
-              src="/mangoj.webp"
+              src="/mangoj3.webp"
               alt="Mango J Portrait"
-              fill
+              width={2611}
+              height={3264}
               sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         </div>
