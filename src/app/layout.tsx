@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     shortcut: '/mangoj.webp',
     apple: '/mangoj.webp',
   },
+  verification: {
+    google: 'pezeIX6JqyqIheLhm1fYi4lqN1iCXv5cdi4q9y4T6mQ',
+  },
 };
 
 export default function RootLayout({
