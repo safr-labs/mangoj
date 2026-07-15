@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { poppins, inter } from '@/lib/fonts';
 import { Navbar } from '@/components/navigation/navbar';
 import { Footer } from '@/components/footer/footer';
@@ -83,6 +84,20 @@ export default function RootLayout({
       className={`${poppins.variable} ${inter.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-26P19YW8BF"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-26P19YW8BF');
+          `}
+        </Script>
+      </head>
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         <a
           href="#main-content"
