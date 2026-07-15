@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://manganikka.com',
+    url: 'https://mangoj13.com',
     title: 'Mango J (Manganikka) — Tamil Creator in Dubai',
     description:
       'Official portfolio of Mango J (Manganikka), Dubai-based Tamil YouTube creator. Explore food reviews, travel vlogs, and property tours.',

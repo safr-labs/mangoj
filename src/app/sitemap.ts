@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://manganikka.com';
+  const baseUrl = 'https://mangoj13.com';
   const routes = ['', '/about', '/videos', '/collaborate', '/contact'];
 
   return routes.map((route) => ({

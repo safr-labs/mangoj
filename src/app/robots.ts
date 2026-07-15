@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = 'https://manganikka.com';
+  const baseUrl = 'https://mangoj13.com';
   return {
     rules: {
       userAgent: '*',
