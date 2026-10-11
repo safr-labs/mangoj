@@ -4,9 +4,9 @@ export const contactContent = {
     description: 'Get in touch with Mango J (Manganikka) for restaurant reviews, sponsored videos, real estate tours, and collaborations in Dubai.',
   },
   hero: {
-    label: 'GET IN TOUCH',
-    title: 'Let’s Collaborate On Your Next Project',
-    description: 'Whether you want to showcase a restaurant, review a luxury property, or build a long-term partnership, send your project details below. We typically respond within 24-48 business hours.',
+    label: 'CONNECT WITH MANGO J (MANGANIKKA) • TOP TAMIL CREATOR IN DUBAI',
+    title: 'Let’s Collaborate On Your Next Campaign',
+    description: 'Whether you want to showcase a restaurant, review a luxury property, or build a long-term brand partnership, send your project details below. We typically respond within 24-48 business hours.',
   },
   info: {
     heading: 'Contact Information',

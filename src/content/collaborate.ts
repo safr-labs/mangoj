@@ -1,7 +1,7 @@
 export const collaborateContent = {
   hero: {
-    label: 'PARTNER WITH MANGANIKKA',
-    title: 'Promote Your Brand to a Highly Engaged Tamil Audience',
+    label: 'PARTNER WITH MANGO J (MANGANIKKA) • TOP TAMIL CREATOR IN DUBAI',
+    title: 'Promote Your Brand to a Highly Engaged Global Tamil Audience',
     description: 'We create high-performance sponsored integrations, authentic food reviews, and cinematic real estate walkthroughs that drive real business results in Dubai and globally. Custom campaigns start from ₹10,000 / 500 AED.',
     primaryCta: {
       text: 'Request Custom Quote',

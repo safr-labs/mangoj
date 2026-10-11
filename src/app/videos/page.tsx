@@ -9,9 +9,19 @@ import { Reveal } from '@/components/shared/reveal';
 import { VideosGridClient } from './videos-grid-client';
 
 export const metadata: Metadata = {
-  title: 'Watch YouTube Videos — Mango J (Manganikka)',
+  title: 'Watch YouTube Videos — Mango J (Manganikka) Tamil Channel',
   description:
-    'Explore the full video library of Mango J (Manganikka). Filter through family vlogs, restaurant food reviews, jewelry reviews, and Dubai real estate tours.',
+    'Watch viral videos by Tamil YouTuber Mango J (Manganikka) in Dubai: Bahubali thali food tasting, Deira fish market, Gold Souk shopping bargains, luxury property tours, and family vlogs.',
+  alternates: {
+    canonical: '/videos',
+  },
+  openGraph: {
+    title: 'Watch YouTube Videos — Mango J (Manganikka) Tamil Channel',
+    description:
+      'Explore viral food reviews, gold shopping guides, real estate walkthroughs, and family vlogs by Mango J (Manganikka).',
+    url: 'https://mangoj13.com/videos',
+    images: [{ url: '/mangoj4.webp', width: 1122, height: 1402, alt: 'Mango J Videos' }],
+  },
 };
 
 interface PageProps {
@@ -33,19 +43,19 @@ export default async function VideosPage({ searchParams }: PageProps) {
         <Container className="max-w-4xl text-center flex flex-col items-center relative z-10">
           <Reveal delay={0.1}>
             <span className="text-xs md:text-sm font-bold tracking-widest text-primary-foreground/90 uppercase mb-4 bg-white/10 px-3 py-1 rounded-full border border-white/20">
-              EXPLORE RELEASES
+              TOP TAMIL YOUTUBER • MANGO J (MANGANIKKA)
             </span>
           </Reveal>
 
           <Reveal delay={0.2}>
             <Heading as="h1" variant="h1" className="text-primary-foreground mb-6">
-              Manganikka Video Library
+              Mango J (Manganikka) Video Library
             </Heading>
           </Reveal>
 
           <Reveal delay={0.3}>
             <p className="text-base md:text-lg text-primary-foreground/80 leading-relaxed max-w-2xl mb-8">
-              Explore lifestyle vlogs, property tours, food walks, and gold guides direct from Dubai. Curated content crafted for the global Tamil diaspora.
+              Explore viral food reviews, Gold Souk shopping guides, property walkthroughs, and Dubai lifestyle vlogs in Tamil. Curated video releases crafted for the global Tamil diaspora.
             </p>
           </Reveal>
 

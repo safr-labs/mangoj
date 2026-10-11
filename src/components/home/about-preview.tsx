@@ -34,7 +34,7 @@ export function AboutPreview() {
             {hero.label}
           </span>
           <Heading as="h2" variant="h2" className="mb-6">
-            Connecting Dubai to the Global Tamil Community
+            Meet Mango J (Manganikka) — Connecting Dubai to the Global Tamil Community
           </Heading>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-6">
             {journey.paragraphs[0]}

@@ -82,7 +82,7 @@ export function Footer() {
             <span>
               Developed by{' '}
               <a
-                href="https://safrlabs.com"
+                href="https://safrlabs.in"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-foreground hover:text-primary transition"

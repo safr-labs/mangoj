@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Link from 'next/link';
-import { Mail, FileText } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { homeContent } from '@/content/home';
 import { Section } from '@/components/layout/section';
 import { Container } from '@/components/layout/container';

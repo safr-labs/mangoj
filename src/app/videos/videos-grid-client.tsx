@@ -39,13 +39,18 @@ export function VideosGridClient({ initialCategory, initialPlatform }: VideosGri
   ];
 
   // Sync state if props change (e.g. from back/forward nav)
-  React.useEffect(() => {
-    setSelectedCategory(initialCategory);
-  }, [initialCategory]);
+  const [prevCategory, setPrevCategory] = React.useState(initialCategory);
+  const [prevPlatform, setPrevPlatform] = React.useState(initialPlatform);
 
-  React.useEffect(() => {
+  if (prevCategory !== initialCategory) {
+    setPrevCategory(initialCategory);
+    setSelectedCategory(initialCategory);
+  }
+
+  if (prevPlatform !== initialPlatform) {
+    setPrevPlatform(initialPlatform);
     setSelectedPlatform(initialPlatform);
-  }, [initialPlatform]);
+  }
 
   const handlePlatformSelect = (platform: string) => {
     setSelectedPlatform(platform);

@@ -15,7 +15,7 @@ export default function NotFound() {
           Page Not Found
         </Heading>
         <p className="text-muted-foreground leading-relaxed mb-8">
-          The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let's get you back.
+          The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Let&apos;s get you back.
         </p>
         <Link
           href="/"

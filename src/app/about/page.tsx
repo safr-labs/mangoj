@@ -26,8 +26,19 @@ import { PageHeader } from '@/components/layout/page-header';
 import { BaseCard } from '@/components/cards/base-card';
 
 export const metadata: Metadata = {
-  title: aboutContent.seo.title,
-  description: aboutContent.seo.description,
+  title: 'About Mango J (Manganikka) — Top Tamil Creator in Dubai',
+  description:
+    'Discover the journey of Mango J (Manganikka), leading Dubai-based Indian Tamil YouTuber with 104K+ subscribers. Silver Play Button creator sharing family vlogs, food reviews, and UAE lifestyle.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    title: 'About Mango J (Manganikka) — Top Tamil Creator in Dubai',
+    description:
+      'Discover the journey of Mango J (Manganikka), leading Dubai-based Indian Tamil YouTuber with 104K+ subscribers.',
+    url: 'https://mangoj13.com/about',
+    images: [{ url: '/mangoj2.webp', width: 2611, height: 3264, alt: 'Mango J (Manganikka) Portrait' }],
+  },
 };
 
 export default function AboutPage() {
@@ -47,7 +58,7 @@ export default function AboutPage() {
   const diffIconMap = [Smile, Heart, Compass, TrendingUp, Clock, Globe];
 
   // Social brand logo map
-  const socialIconMap: Record<string, React.ComponentType<any>> = {
+  const socialIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
     YouTube: Video,
     Instagram: Camera,
     Facebook: Users,
@@ -278,15 +289,15 @@ export default function AboutPage() {
                 <Image
                   src={img.src}
                   alt={img.alt}
-                  width={(img as any).width || 3264}
-                  height={(img as any).height || 2448}
+                  width={(img as { width?: number }).width || 3264}
+                  height={(img as { height?: number }).height || 2448}
                   loading="lazy"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5 text-left">
                   <p className="text-sm font-medium italic text-amber-300 mb-2 leading-relaxed">
-                    {(img as any).quote || img.alt}
+                    {(img as { quote?: string }).quote || img.alt}
                   </p>
                   <p className="text-[10px] uppercase tracking-widest font-bold text-white/60">
                     {img.alt}

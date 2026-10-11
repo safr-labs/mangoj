@@ -4,14 +4,24 @@ import { Mail, MapPin, Clock } from 'lucide-react';
 import { contactContent } from '@/content/contact';
 import { Section } from '@/components/layout/section';
 import { Container } from '@/components/layout/container';
-import { SectionHeader } from '@/components/shared/section-header';
 import { PageHeader } from '@/components/layout/page-header';
 import { FormSkeleton } from '@/components/shared/skeleton';
 import { ContactForm } from './contact-form';
 
 export const metadata: Metadata = {
-  title: contactContent.seo.title,
-  description: contactContent.seo.description,
+  title: 'Contact Mango J (Manganikka) — Brand Collaborations & Bookings',
+  description:
+    'Get in touch with Mango J (Manganikka) for restaurant reviews, sponsored videos, real estate tours, and collaborations in Dubai. Fast response within 24-48 hours.',
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    title: 'Contact Mango J (Manganikka) — Brand Collaborations & Bookings',
+    description:
+      'Get in touch with Mango J (Manganikka) for restaurant reviews, sponsored videos, real estate tours, and collaborations in Dubai.',
+    url: 'https://mangoj13.com/contact',
+    images: [{ url: '/mangoj.webp', width: 500, height: 500, alt: 'Contact Mango J' }],
+  },
 };
 
 export default function ContactPage() {

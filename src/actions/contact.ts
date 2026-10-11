@@ -12,7 +12,7 @@ const contactSchema = z.object({
   message: z.string().min(10),
 });
 
-export async function submitContactEnquiry(prevState: any, formData: FormData) {
+export async function submitContactEnquiry(prevState: unknown, formData: FormData) {
   const rawFields = {
     name: formData.get('name'),
     email: formData.get('email'),

@@ -22,11 +22,14 @@ export function Hero() {
           
           <Reveal delay={0.2}>
             <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.1] mb-6">
-              Showcasing the Best of{' '}
-              <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-600 dark:to-primary">
-                Dubai Lifestyle
-              </span>{' '}
-              & Culture
+              Mango J <span className="text-primary font-extrabold">(Manganikka)</span>
+              <span className="block text-2xl sm:text-3xl md:text-4xl font-semibold mt-3 text-foreground/90">
+                Top{' '}
+                <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-primary to-amber-600 dark:to-primary">
+                  Tamil YouTuber
+                </span>{' '}
+                & Dubai Vlogger
+              </span>
             </h1>
           </Reveal>
 
@@ -85,8 +88,8 @@ export function Hero() {
                     />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-widest font-bold">Featured Creator</p>
-                    <p className="text-sm font-semibold text-foreground">Mango J — Dubai Vlogger</p>
+                    <p className="text-xs text-primary uppercase tracking-widest font-bold">Verified Tamil Creator</p>
+                    <p className="text-sm font-semibold text-foreground">Mango J (Manganikka) • 104K+ Subs</p>
                   </div>
                 </div>
               </div>

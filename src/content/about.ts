@@ -4,9 +4,9 @@ export const aboutContent = {
     description: 'Learn about the journey of Mango J, a popular Tamil YouTube creator based in Dubai sharing lifestyle, food, and family vlogs.',
   },
   hero: {
-    label: 'THE STORY BEHIND MANGANIKKA',
-    title: 'Hi, I’m Mango J — Authentic Voice of the Tamil Diaspora',
-    description: 'From sharing simple daily moments to building a community of over 1.04 Lakhs subscribers, my goal has always been to provide entertaining, helpful, and family-oriented content from Dubai to the world.',
+    label: 'TOP TAMIL YOUTUBER IN DUBAI • THE STORY BEHIND MANGANIKKA (மங்கானிக்கா)',
+    title: 'Hi, I’m Mango J (Manganikka) — Voice of the Global Tamil Diaspora',
+    description: 'From sharing simple daily moments to building an active community of over 1.04 Lakhs (104K+) subscribers and 1,100+ videos, my goal has always been to provide entertaining, helpful, and wholesome family-oriented content from Dubai to Tamil audiences worldwide.',
   },
   journey: {
     label: 'MY STORY',

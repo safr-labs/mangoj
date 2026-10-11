@@ -12,7 +12,6 @@ import {
   Clock,
   TrendingUp,
   Mail,
-  MessageSquare,
   ArrowRight,
   CheckCircle2,
 } from 'lucide-react';
@@ -34,14 +33,24 @@ import {
 export const metadata: Metadata = {
   title: 'Collaborate with Mango J — Sponsor & Branding in Dubai',
   description:
-    'Partner with Dubai’s premier Tamil creator for food reviews, sponsored integrations, gold guide videos, and property walkthroughs. Request our media kit.',
+    'Partner with Dubai’s premier Tamil creator Mango J (Manganikka) for food reviews, sponsored integrations, gold guide videos, and property walkthroughs. Request our media kit.',
+  alternates: {
+    canonical: '/collaborate',
+  },
+  openGraph: {
+    title: 'Collaborate with Mango J — Sponsor & Branding in Dubai',
+    description:
+      'Partner with Dubai’s premier Tamil creator Mango J (Manganikka) for food reviews, sponsored integrations, gold guide videos, and property walkthroughs.',
+    url: 'https://mangoj13.com/collaborate',
+    images: [{ url: '/mangoj3.webp', width: 2611, height: 3264, alt: 'Collaborate with Mango J' }],
+  },
 };
 
 export default function CollaboratePage() {
   const { hero, whyPartner, whoWeWorkWith, process, faq, cta, demographics } = collaborateContent;
 
   // Icon mapping for services
-  const serviceIconMap: Record<string, React.ComponentType<any>> = {
+  const serviceIconMap: Record<string, React.ComponentType<{ className?: string }>> = {
     video: Video,
     utensils: Utensils,
     home: Home,
